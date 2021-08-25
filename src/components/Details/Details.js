@@ -1,10 +1,13 @@
-function Details() {
+function Details({ details, isCorrect }) {
     return (
         <ul>
-            <li>name: </li>
-            <li>type: </li>
-            <li>something: </li>
-            <li>else: </li>
+            <li>
+                name: 
+                { isCorrect && <span>{details.name}</span> }
+            </li>
+            <li>type: {details.type}</li>
+            <li>height: {details.height}</li>
+            <li>weight: {details.weight}</li>
         </ul>
     );
 }

@@ -14,12 +14,32 @@ function _getRandomFirstGenNumber() {
     return randomNumber;
 }
 
+function _getPokemonDetails(pokemon) {
+    let type = '';
+    const joinCharacter = '/';
+    for (let index = 0; index < pokemon.types.length; index++) {
+        type += pokemon.types[index].type.name;
+        if (index !== pokemon.types.length - 1) {
+            type += joinCharacter;
+        }
+    }
+    return {
+        name: pokemon.name,
+        weight: pokemon.weight,
+        height: pokemon.height,
+        type
+    };
+}
+
 function App() {
     const [currentPokemon, setCurrentPokemon] = useState({
         sprites: {
             front_default: ''
         },
-        name: ''
+        name: '',
+        height: '',
+        weight: '',
+        types: []
     });
     const [hasGuessed, setHasGuessed] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -28,6 +48,8 @@ function App() {
             await _pickRandomPokemon();
         })();
     }, []);
+
+    
     
     async function _pickRandomPokemon() {
         const randomFirstGenNumber = _getRandomFirstGenNumber();
@@ -36,8 +58,6 @@ function App() {
     }
 
     function handleGuess(guess) {
-        console.log('App.handleGuess()');
-        console.log(guess);
         const currentPokemonName = currentPokemon.name;
         if (guess === currentPokemonName) {
             alert('correct');
@@ -56,7 +76,7 @@ function App() {
                 actualName={currentPokemon.name}
             />
             <Guess actualName={currentPokemon.name} onGuess={handleGuess} />
-            <Details />
+            <Details details={_getPokemonDetails(currentPokemon)} isCorrect={isCorrect} />
         </>
     );
 }
