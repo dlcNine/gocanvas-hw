@@ -43,14 +43,13 @@ function App() {
     });
     const [hasGuessed, setHasGuessed] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
+    const [numCombo, setNumCombo] = useState(0);
     useEffect(() => {
         (async () => {
             await _pickRandomPokemon();
         })();
     }, []);
 
-    
-    
     async function _pickRandomPokemon() {
         const randomFirstGenNumber = _getRandomFirstGenNumber();
         const pokemon = await pokemonAPI.getPokemonByNumber(randomFirstGenNumber);
@@ -59,11 +58,15 @@ function App() {
 
     function handleGuess(guess) {
         const currentPokemonName = currentPokemon.name;
+        setHasGuessed(true);
         if (guess === currentPokemonName) {
             alert('correct');
-            // wipe the old guess
+            setNumCombo(numCombo + 1);
+            setIsCorrect(true);
             _pickRandomPokemon();
         } else {
+            setNumCombo(0);
+            setIsCorrect(false);
             alert('incorrect');
         }
     }
@@ -75,7 +78,8 @@ function App() {
                 imageURL={currentPokemon.sprites.front_default}
                 actualName={currentPokemon.name}
             />
-            <Guess actualName={currentPokemon.name} onGuess={handleGuess} />
+            {numCombo}
+            <Guess onGuess={handleGuess} />
             <Details details={_getPokemonDetails(currentPokemon)} isCorrect={isCorrect} />
         </>
     );

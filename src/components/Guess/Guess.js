@@ -7,6 +7,7 @@ function Guess({ onGuess }) {
         const guess = guessInputRef.current.value;
         const sanitizedGuess = guess.trim().toLowerCase();
         onGuess(sanitizedGuess);
+        guessInputRef.current.value = '';
     }
     return (
         <form name="guessPokemon">
