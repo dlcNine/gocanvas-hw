@@ -1,8 +1,8 @@
-function Display() {
+function Display({ imageURL, actualName }) {
     return (
         <figure>
-            <img src="" alt="pokemon" />
-            <figcaption>display here</figcaption>
+            <img src={imageURL} alt="mystery pokemon" />
+            <figcaption>{actualName}</figcaption>
         </figure>
     );
 }
