@@ -7,10 +7,17 @@ import Details from './components/Details/Details';
 
 import { pokemonAPI } from './api/pokemon';
 
+function _getRandomFirstGenNumber() {
+    const numInFirstGen = 151;
+    const randomNumber = Math.floor(Math.random() * numInFirstGen) + 1;
+    return randomNumber;
+}
+
 function App() {
     useEffect(() => {
         (async () => {
-            const pokemon = await pokemonAPI.getPokemonByNumber(3);
+            const randomFirstGenNumber = _getRandomFirstGenNumber();
+            const pokemon = await pokemonAPI.getPokemonByNumber(randomFirstGenNumber);
         })();
     }, []);
     return (
