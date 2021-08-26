@@ -64,11 +64,9 @@ function App() {
         if (guess === currentPokemonName) {
             setNumCombo(numCombo + 1);
             setIsCorrect(true);
-            alert('correct');
         } else {
             setNumCombo(0);
             setIsCorrect(false);
-            alert('incorrect');
         }
     }
 

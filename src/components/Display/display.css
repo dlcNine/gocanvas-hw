@@ -1,0 +1,11 @@
+.display {
+    text-align: center;
+    position: relative;
+}
+
+.display__message {
+    position: absolute;
+    bottom: -2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
