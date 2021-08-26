@@ -1,9 +1,9 @@
-function Details({ details, isCorrect }) {
+function Details({ details, hasGuessed }) {
     return (
         <ul>
             <li>
                 name: 
-                { isCorrect && <span>{details.name}</span> }
+                 { hasGuessed && <span> {details.name}</span> }
             </li>
             <li>type: {details.type}</li>
             <li>height: {details.height}</li>

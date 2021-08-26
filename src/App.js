@@ -60,10 +60,9 @@ function App() {
         const currentPokemonName = currentPokemon.name;
         setHasGuessed(true);
         if (guess === currentPokemonName) {
-            alert('correct');
             setNumCombo(numCombo + 1);
             setIsCorrect(true);
-            _pickRandomPokemon();
+            alert('correct');
         } else {
             setNumCombo(0);
             setIsCorrect(false);
@@ -71,16 +70,28 @@ function App() {
         }
     }
 
+    function prepNextPokemon() {
+        setHasGuessed(false);
+        setIsCorrect(false);
+        _pickRandomPokemon();
+    }
+
     return (
         <>
             <Banner />
             <Display 
                 imageURL={currentPokemon.sprites.front_default}
-                actualName={currentPokemon.name}
+                hasGuessed={hasGuessed}
+                isCorrect={isCorrect}
             />
             {numCombo}
-            <Guess onGuess={handleGuess} />
-            <Details details={_getPokemonDetails(currentPokemon)} isCorrect={isCorrect} />
+            <Guess 
+                onGuess={handleGuess} 
+                onNext={prepNextPokemon} 
+                hasGuessed={hasGuessed} 
+                isCorrect={isCorrect} 
+            />
+            <Details details={_getPokemonDetails(currentPokemon)} hasGuessed={hasGuessed} />
         </>
     );
 }

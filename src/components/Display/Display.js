@@ -1,8 +1,9 @@
-function Display({ imageURL, actualName }) {
+function Display({ imageURL, hasGuessed, isCorrect }) {
+    const message = isCorrect ? 'Correct!' : 'Wrong';
     return (
         <figure>
             <img src={imageURL} alt="mystery pokemon" />
-            <figcaption>{actualName}</figcaption>
+            { hasGuessed && <figcaption>{message}</figcaption> }
         </figure>
     );
 }
