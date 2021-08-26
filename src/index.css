@@ -1,5 +1,7 @@
 /* base */
 @import url('./assets/stylesheets/base/normalize.css');
+@import url('./assets/stylesheets/base/colors.css');
+@import url('./assets/stylesheets/base/custom-defaults.css');
 
 /* components */
 

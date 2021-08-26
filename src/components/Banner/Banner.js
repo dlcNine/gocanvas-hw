@@ -1,6 +1,8 @@
 function Banner() {
     return (
-        <header>Who's that Pokémon?</header>
+        <header>
+            <h1>Who's that Pokémon?</h1>
+        </header>
     );
 }
 
