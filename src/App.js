@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import './index.css';
-
 import Banner from './components/Banner/Banner';
 import Display from './components/Display/Display';
 import Guess from './components/Guess/Guess';
