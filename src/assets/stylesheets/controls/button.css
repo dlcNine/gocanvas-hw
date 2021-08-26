@@ -1,0 +1,12 @@
+.button {
+    font-size: 2.4rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background-color: var(--color-brand-accent);
+    color: var(--color-text-white);
+    border: 0.1rem solid transparent;
+    border-radius: 0.4rem;
+
+}

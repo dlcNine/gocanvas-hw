@@ -1,6 +1,8 @@
 :root {
     --color-brand-primary: #e95738;
     --color-brand-accent: #69c3de;
+    --color-border: #4255b8;
+    --color-border-hover: #4255b8;
     --color-text-white: #def2fa;
     --color-background-white: #e4f3f8;
 }

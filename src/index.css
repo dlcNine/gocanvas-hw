@@ -11,6 +11,8 @@
 @import url('./assets/stylesheets/components/box.css');
 
 /* controls */
+@import url('./assets/stylesheets/controls/textbox.css');
+@import url('./assets/stylesheets/controls/button.css');
 
 /* utilities */
 @import url('./assets/stylesheets/utilities/margin.css');
