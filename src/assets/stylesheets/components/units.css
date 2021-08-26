@@ -3,10 +3,6 @@
     grid-template-columns: repeat(12, 1fr);
 }
 
-[class*="units__"] {
-    border: 0.1rem solid black;;
-}
-
 .units__1 { grid-column-start: span 1; }
 .units__2 { grid-column-start: span 2; }
 .units__3 { grid-column-start: span 3; }
