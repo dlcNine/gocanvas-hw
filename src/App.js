@@ -81,19 +81,21 @@ function App() {
     return (
         <>
             <Banner />
-            <Display 
-                imageURL={currentPokemon.sprites.front_default}
-                hasGuessed={hasGuessed}
-                isCorrect={isCorrect}
-            />
-            {numCombo}
-            <Guess 
-                onGuess={handleGuess} 
-                onNext={prepNextPokemon} 
-                hasGuessed={hasGuessed} 
-                isCorrect={isCorrect} 
-            />
-            <Details details={_getPokemonDetails(currentPokemon)} hasGuessed={hasGuessed} />
+            <main className="main">
+                <Display 
+                    imageURL={currentPokemon.sprites.front_default}
+                    hasGuessed={hasGuessed}
+                    isCorrect={isCorrect}
+                />
+                {numCombo}
+                <Guess 
+                    onGuess={handleGuess} 
+                    onNext={prepNextPokemon} 
+                    hasGuessed={hasGuessed} 
+                    isCorrect={isCorrect} 
+                />
+                <Details details={_getPokemonDetails(currentPokemon)} hasGuessed={hasGuessed} />
+            </main>
         </>
     );
 }
