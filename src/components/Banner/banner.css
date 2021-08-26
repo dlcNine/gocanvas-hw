@@ -1,0 +1,7 @@
+.banner {
+    padding: 1.6rem;
+    background-color: var(--color-brand-accent);
+    color: var(--color-text-white);
+    text-align: center;
+    box-shadow: 0.1rem 0.1rem 2rem black;
+}

@@ -1,7 +1,9 @@
+import './banner.css'
+
 function Banner() {
     return (
-        <header>
-            <h1>Who's that Pokémon?</h1>
+        <header className="banner">
+            <h1 className="_m-0">Who's that Pokémon?</h1>
         </header>
     );
 }
