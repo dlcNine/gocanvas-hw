@@ -80,12 +80,12 @@ function App() {
         <>
             <Banner />
             <main className="main">
+                { Boolean(numCombo) && <span className="counter">{numCombo}</span> }
                 <Display 
                     imageURL={currentPokemon.sprites.front_default}
                     hasGuessed={hasGuessed}
                     isCorrect={isCorrect}
                 />
-                {numCombo}
                 <Guess 
                     onGuess={handleGuess} 
                     onNext={prepNextPokemon} 

@@ -5,6 +5,7 @@
 
 /* layout */
 @import url('./assets/stylesheets/layout/main-content.css');
+@import url('./assets/stylesheets/layout/counter.css');
 
 /* components */
 @import url('./assets/stylesheets/components/units.css');
