@@ -53,9 +53,14 @@ function App() {
     }, []);
 
     async function _pickRandomPokemon() {
-        const randomFirstGenNumber = _getRandomFirstGenNumber();
-        const pokemon = await pokemonAPI.getPokemonByNumber(randomFirstGenNumber);
-        setCurrentPokemon(pokemon);
+        try {
+            const randomFirstGenNumber = _getRandomFirstGenNumber();
+            const pokemon = await pokemonAPI.getPokemonByNumber(randomFirstGenNumber);
+            setCurrentPokemon(pokemon);
+        } catch (e) {
+            console.error(e);
+            alert("There was a problem finding pokemon. Please refresh the page.");
+        }
     }
 
     function handleGuess(guess) {
