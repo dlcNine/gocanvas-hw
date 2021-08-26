@@ -20,7 +20,7 @@ function Guess({ onGuess, onNext, hasGuessed, isCorrect }) {
 
     function _getHasNotGuessedMarkup() {
         return (
-            <form name="guessPokemon">
+            <form name="guessPokemon" className="_d-flex _my-1">
                 <input 
                 type="text" 
                 className="textbox"
@@ -36,8 +36,8 @@ function Guess({ onGuess, onNext, hasGuessed, isCorrect }) {
     function _getHasGuessedMarkup(isCorrect) {
         const innerText = isCorrect ? 'Next Pokemon' : 'Try Again'
         return (
-            <form name="nextPokemon">
-                <button type="submit" className="button" onClick={_handleNext} >{innerText}</button>
+            <form name="nextPokemon" className="_d-flex _my-1">
+                <button type="submit" className="button _w-100" onClick={_handleNext} >{innerText}</button>
             </form>
         );
     }
