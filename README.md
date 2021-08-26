@@ -1,5 +1,5 @@
 # Install Steps
-`npm install'
+`npm install`
 
 # How to Run
 `npm run start`
