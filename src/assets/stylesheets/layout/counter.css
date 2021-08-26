@@ -6,9 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.4rem 1rem;
     border-radius: 9000rem;
-    height: 2.4rem;
-    width: 2.4rem;
     background-color: var(--color-brand-accent-dark);
     color: var(--color-text-white);
 }
